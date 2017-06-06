@@ -1,0 +1,78 @@
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+.pagination {
+
+  > li {
+    > a{
+      color: $pagination-color;
+      background-color: $pagination-bg;
+    }
+	> span{
+	  background-color:$brand-dark;
+	  color:#fff;
+	}
+    &:first-child {
+      > a,
+      > span {
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+      }
+    }
+  }
+
+  > li > a {
+    &:hover,
+    &:focus {
+      color: $pagination-hover-color;
+      background-color: $pagination-hover-bg;
+      border-color: $pagination-hover-border;
+    }
+  }
+  > li > span {
+    &:hover,
+    &:focus {
+      background-color:$brand-dark;
+	  color:#fff;
+      border-color: $pagination-hover-border;
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: $pagination-disabled-color;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border;
+    }
+  }
+}
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-lg {
+}
+
+// Small
+.pagination-sm {
+}

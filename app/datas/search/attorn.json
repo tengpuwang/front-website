@@ -1,0 +1,126 @@
+{
+  "intro": " ----------- 商铺转让 ---------- ",
+  
+  "industry": {
+    "intro": "------------ 行业 --------------",
+    "list": [
+      { "name": "酒楼餐饮", "count": 32},
+      { "name": "美容美发", "count": 51},
+      { "name": "服饰鞋包", "count": 3},
+      { "name": "专柜转让", "count": 23},
+      { "name": "休闲娱乐", "count": 123},
+      { "name": "百货超市", "count": 87},
+      { "name": "生活服务", "count": 54},
+      { "name": "电子通讯", "count": 8},
+      { "name": "汽修美容", "count": 41},
+      { "name": "医药保健", "count": 91},
+      { "name": "家居建材", "count": 2},
+      { "name": "教育培训", "count": 5},
+      { "name": "旅馆宾馆", "count": 78},
+      { "name": "公司工厂", "count": 98},
+      { "name": "其他", "count": 100}
+    ]
+  },
+  "type": {
+    "intro": "------------ 类型 --------------",
+    "list": [
+      { "name": "商业街卖场", "count": 12},
+      { "name": "写字楼配套", "count": 9},
+      { "name": "住宅底商", "count": 32},
+      { "name": "摊位柜台", "count": 98},
+      { "name": "其他", "count": 120}
+    ]
+  },
+  "choosen": {
+    "intro": "------------ 您已选择 --------------",
+    "list": [
+      "新街口", "火车站", "中山路", "玄武区", "新庄", "鼓楼区", "建邺区", "美容美发", "商业街卖场"
+    ]
+  },
+  "result_list": {
+    "intro": "------------ 搜索结果List --------------",
+    "list": [
+      {
+        "title": "淮海路与中山南路路口三楼顶级黄金商铺人流大",
+        "img": "/img/store-pic.jpg",
+        "sale_type": "转让",
+        "location": "淮海路与中山南路路口",
+        "type": "商业街卖场",
+        "area": "102",
+        "price": "35",
+        "rent": 178300,
+        "isStore": false,
+        "isEmpty": true,
+        "isTrue": true,
+        "time": "刚刚",
+        "cate": "其他",
+        
+        "sub": [
+          {
+            "title": "淮海路与中山南路路口三楼顶级黄金商铺人流大",
+            "img": "/img/store-pic.jpg",
+            "sale_type": "转让",
+            "location": "淮海路与中山南路路口",
+            "type": "商业街卖场",
+            "area": "102",
+            "price": "35",
+            "rent": 178300,
+            "cate": "其他"
+          },
+          {
+            "title": "淮海路与中山南路路口三楼顶级黄金商铺人流大",
+            "img": "/img/store-pic.jpg",
+            "sale_type": "转让",
+            "location": "淮海路与中山南路路口",
+            "type": "商业街卖场",
+            "area": "102",
+            "price": "35",
+            "rent": 178300,
+            "cate": "其他"
+          },
+          {
+            "title": "淮海路与中山南路路口三楼顶级黄金商铺人流大",
+            "img": "/img/store-pic.jpg",
+            "sale_type": "转让",
+            "location": "淮海路与中山南路路口",
+            "type": "商业街卖场",
+            "area": "102",
+            "price": "35",
+            "rent": 178300,
+            "cate": "其他"
+          }
+        ]
+      },
+      {
+        "title": "淮海路与中山南路路口三楼顶级黄金商铺人流大",
+        "img": "/img/store-pic.jpg",
+        "sale_type": "转让",
+        "location": "淮海路与中山南路路口",
+        "type": "商业街卖场",
+        "area": "102",
+        "price": "35",
+        "rent": 178300,
+        "isStore": true,
+        "isEmpty": false,
+        "isTrue": true,
+        "time": "5分钟前",
+        "cate": "酒楼餐饮"
+      },
+      {
+        "title": "淮海路与中山南路路口三楼顶级黄金商铺人流大",
+        "img": "/img/store-pic.jpg",
+        "sale_type": "转让",
+        "location": "淮海路与中山南路路口",
+        "type": "商业街卖场",
+        "area": "102",
+        "price": "35",
+        "rent": 178300,
+        "isStore": true,
+        "isEmpty": false,
+        "isTrue": false,
+        "time": "5个小时前",
+        "cate": "公司工厂"
+      }
+    ]
+  }
+}

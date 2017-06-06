@@ -1,0 +1,14 @@
+{
+  "attorn": {
+    "name": "商铺转让",
+    "value": "attorn"
+  },
+  "sell": {
+    "name": "商铺租售",
+    "value": "sell"
+  },
+  "seek": {
+    "name": "求租求售",
+    "value": "seek"
+  }
+}

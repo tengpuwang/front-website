@@ -1,0 +1,77 @@
+//
+// List groups
+// --------------------------------------------------
+
+
+// Interactive list items
+//
+// Use anchor or button elements instead of `li`s or `div`s to create interactive items.
+// Includes an extra `.active` modifier class for showing selected items.
+
+a.list-group-item,
+button.list-group-item {
+
+
+  // Hover state
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+button.list-group-item {
+  width: 100%;
+  text-align: left;
+}
+
+.list-group-item {
+  border: 1px solid $list-group-border;
+
+  // Round the first and last items
+  &:first-child {
+    @include border-top-radius($list-group-border-radius);
+  }
+  &:last-child {
+    margin-bottom: 0;
+    @include border-bottom-radius($list-group-border-radius);
+  }
+
+  // Disabled state
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus {
+
+    // Force color to inherit for custom content
+    .list-group-item-heading {
+      color: inherit;
+    }
+    .list-group-item-text {
+    }
+  }
+
+  // Active class on item itself, not parent
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    z-index: 2; // Place active items above their siblings for proper border styling
+    color: $brand-theme;
+    background-color: $gray-line;
+    border-color: $gray-line;
+
+    // Force color to inherit for custom content
+    .list-group-item-heading,
+    .list-group-item-heading > small,
+    .list-group-item-heading > .small {
+      color: inherit;
+    }
+
+    .list-group-item-text {
+      color: $list-group-active-text-color;
+    }
+
+    .list-group-item .badge{background:$brand-theme;}
+  }
+}
+
+.list-group-item:last-child,
+.list-group-item + .clear{border-radius-bottom-left:$border-radius-base;border-radius-bottom-right:$border-radius-base;}

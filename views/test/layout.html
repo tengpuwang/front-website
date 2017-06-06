@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %} - Example</title>
+</head>
+
+<body>
+
+<header>
+    <h1>{% block title %}{% endblock %}</h1>
+    {% block header %}{% endblock %}
+    <nav>
+        <ul>
+            <li><a href="/">Home Page</a></li>
+            <li><a href="/people">People</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section role="main">
+    {% block body %}{% endblock %}
+</section>
+
+<hr>
+<footer>
+    <div class="ui container">
+        <div class="ui left">
+            © 2016 Node+Koa+Swig 当前版本: 0.1.0 页面: <strong> {{ X_Response_Time }} ms</strong> 模板: <strong>{{ X-Render-Time }}ms</strong> 数据: <strong>{{ X-Query-Time }}ms</strong>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,848 @@
+{
+  "intro": "--------------- 主页Json文件 --- zhangyanming -----------------",
+  
+  "per_pub": {
+    "intro": " --- 个人发布 --- ",
+    "list": [
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "31",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "32",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "33",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "34",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "35",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "36",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "37",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "38",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "39",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "40",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "41",
+        "user": "孙林"
+      },
+      {
+        "title": "体彩福彩双彩点转让",
+        "sale_type": "转让",
+        "location": "秦淮区",
+        "area": "42",
+        "user": "孙林"
+      }
+    ]
+  },
+  
+  "sale_rent": {
+    "intro": " --- 租售推荐 --- ",
+    "hot_rent": {
+      "intro": " --- 热门出租 --- ",
+      "first": {
+        "intro": " --- 头条 --- ",
+        
+        "title": "鼓楼广场中心地段黄金门面招",
+        "img": "img/store-pic.jpg",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "34",
+        "price": "13001"
+      },
+      "list": [
+        {
+          "title": "大厂区杨庄卸甲甸地铁口空铺出售",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "江宁学校门口新铺出售",
+          "area": "211",
+          "link": ""
+        },
+        {
+          "title": "夫子庙三山街地铁口旺铺出售",
+          "area": "45",
+          "link": ""
+        },
+        {
+          "title": "秦淮闹市区黄金旺铺出售",
+          "area": "56",
+          "link": ""
+        },
+        {
+          "title": "新街口服装门面出售",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "浦口地铁口旺铺出售",
+          "area": "23",
+          "link": ""
+        },
+        {
+          "title": "新街口商务楼附近临街门面出售",
+          "area": "79",
+          "link": ""
+        },
+        {
+          "title": "厂区附近旺铺出售适合各行",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "河海江宁校区西门金智路丹佛出售",
+          "area": "11",
+          "link": ""
+        },
+        {
+          "title": "大厂区杨庄卸甲甸地铁口空铺出售",
+          "area": "41",
+          "link": ""
+        }
+      ],
+      "locaitons": [
+        {
+          "name": "玄武门",
+          "link": ""
+        },
+        {
+          "name": "雨花台",
+          "link": ""
+        },
+        {
+          "name": "美容美发",
+          "link": ""
+        },
+        {
+          "name": "百货超市",
+          "link": ""
+        },
+        {
+          "name": "20-50m2",
+          "link": ""
+        },
+        {
+          "name": "100-120m2",
+          "link": ""
+        },
+        {
+          "name": "美容美发",
+          "link": ""
+        },
+        {
+          "name": "百货超市",
+          "link": ""
+        }
+      ]
+    },
+    
+    "hot_sale": {
+      "intro": " --- 热门出售 --- ",
+      "first": {
+        "intro": " --- 头条 --- ",
+        
+        "title": "鼓楼广场中心地段黄金门面招",
+        "img": "img/store-pic.jpg",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "30",
+        "price": "19001"
+      },
+      "list": [
+        {
+          "title": "大厂区杨庄卸甲甸地铁口空铺出售",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "江宁学校门口新铺出售",
+          "area": "211",
+          "link": ""
+        },
+        {
+          "title": "夫子庙三山街地铁口旺铺出售",
+          "area": "45",
+          "link": ""
+        },
+        {
+          "title": "秦淮闹市区黄金旺铺出售",
+          "area": "56",
+          "link": ""
+        },
+        {
+          "title": "新街口服装门面出售",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "浦口地铁口旺铺出售",
+          "area": "23",
+          "link": ""
+        },
+        {
+          "title": "新街口商务楼附近临街门面出售",
+          "area": "79",
+          "link": ""
+        },
+        {
+          "title": "厂区附近旺铺出售适合各行",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "河海江宁校区西门金智路丹佛出售",
+          "area": "11",
+          "link": ""
+        },
+        {
+          "title": "大厂区杨庄卸甲甸地铁口空铺出售",
+          "area": "41",
+          "link": ""
+        }
+      ],
+      "locaitons": [
+        {
+          "name": "玄武门",
+          "link": ""
+        },
+        {
+          "name": "雨花台",
+          "link": ""
+        },
+        {
+          "name": "美容美发",
+          "link": ""
+        },
+        {
+          "name": "百货超市",
+          "link": ""
+        },
+        {
+          "name": "20-50m2",
+          "link": ""
+        },
+        {
+          "name": "100-120m2",
+          "link": ""
+        },
+        {
+          "name": "美容美发",
+          "link": ""
+        },
+        {
+          "name": "百货超市",
+          "link": ""
+        }
+      ]
+    },
+    
+    "rec_busi": {
+      "intro": " --- 推荐招商 --- ",
+      "first": {
+        "intro": " --- 头条 --- ",
+        
+        "title": "鼓楼广场中心地段黄金门面招",
+        "img": "img/store-pic.jpg",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "11",
+        "price": "10001"
+      },
+      "list": [
+        {
+          "title": "大厂区杨庄卸甲甸地铁口空铺出售",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "江宁学校门口新铺出售",
+          "area": "211",
+          "link": ""
+        },
+        {
+          "title": "夫子庙三山街地铁口旺铺出售",
+          "area": "45",
+          "link": ""
+        },
+        {
+          "title": "秦淮闹市区黄金旺铺出售",
+          "area": "56",
+          "link": ""
+        },
+        {
+          "title": "新街口服装门面出售",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "浦口地铁口旺铺出售",
+          "area": "23",
+          "link": ""
+        },
+        {
+          "title": "新街口商务楼附近临街门面出售",
+          "area": "79",
+          "link": ""
+        },
+        {
+          "title": "厂区附近旺铺出售适合各行",
+          "area": "31",
+          "link": ""
+        },
+        {
+          "title": "河海江宁校区西门金智路丹佛出售",
+          "area": "11",
+          "link": ""
+        },
+        {
+          "title": "大厂区杨庄卸甲甸地铁口空铺出售",
+          "area": "41",
+          "link": ""
+        }
+      ],
+      "locaitons": [
+        {
+          "name": "玄武门",
+          "link": ""
+        },
+        {
+          "name": "雨花台",
+          "link": ""
+        },
+        {
+          "name": "美容美发",
+          "link": ""
+        },
+        {
+          "name": "百货超市",
+          "link": ""
+        },
+        {
+          "name": "20-50m2",
+          "link": ""
+        },
+        {
+          "name": "100-120m2",
+          "link": ""
+        },
+        {
+          "name": "美容美发",
+          "link": ""
+        },
+        {
+          "name": "百货超市",
+          "link": ""
+        }
+      ]
+    }
+  },
+  
+  "newest_trade": {
+    "intro": " --- 最新成交 --- ",
+    "page01": [
+      {
+        "user": "董先生",
+        "host": "奶茶店",
+        "status": "已转让",
+        "time": "刚刚"
+      },
+      {
+        "user": "邓先生",
+        "host": "餐饮店",
+        "status": "已转让",
+        "time": "今天"
+      },
+      {
+        "user": "张先生",
+        "host": "服装店",
+        "status": "已转让",
+        "time": "今天"
+      },
+      {
+        "user": "傅先生",
+        "host": "冷饮店",
+        "status": "已出租",
+        "time": "昨天"
+      },
+      {
+        "user": "董先生",
+        "host": "奶茶店",
+        "status": "已转让",
+        "time": "刚刚"
+      },
+      {
+        "user": "江女士/李先生",
+        "host": "理发店",
+        "status": "已转让",
+        "time": "3天前"
+      },
+      {
+        "user": "夏先生",
+        "host": "美容店",
+        "status": "已转让",
+        "time": "2016.09.27"
+      },
+      {
+        "user": "张先生",
+        "host": "理发店",
+        "status": "已转让",
+        "time": "2016.09.22"
+      }
+    ],
+    "page02": [
+      {
+        "user": "董先生01",
+        "host": "奶茶店",
+        "status": "已转让",
+        "time": "刚刚"
+      },
+      {
+        "user": "邓先生01",
+        "host": "餐饮店",
+        "status": "已转让",
+        "time": "今天"
+      },
+      {
+        "user": "张先生01",
+        "host": "服装店",
+        "status": "已转让",
+        "time": "今天"
+      },
+      {
+        "user": "傅先生",
+        "host": "冷饮店",
+        "status": "已出租",
+        "time": "昨天"
+      },
+      {
+        "user": "董先生",
+        "host": "奶茶店",
+        "status": "已转让",
+        "time": "刚刚"
+      },
+      {
+        "user": "江女士/李先生",
+        "host": "理发店",
+        "status": "已转让",
+        "time": "3天前"
+      },
+      {
+        "user": "夏先生",
+        "host": "美容店",
+        "status": "已转让",
+        "time": "2016.09.27"
+      },
+      {
+        "user": "张先生",
+        "host": "理发店",
+        "status": "已转让",
+        "time": "2016.09.22"
+      }
+    ]
+  },
+  
+  "week_quaichuan": {
+    "intro": " --- 一周快转 --- ",
+    "page01": [
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.1",
+        "price": "14001"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.1",
+        "price": "14001"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.1",
+        "price": "14001"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.1",
+        "price": "14001"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.1",
+        "price": "14001"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.1",
+        "price": "14001"
+      }
+    ],
+    "page02": [
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.9",
+        "price": "14002"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.9",
+        "price": "14002"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.9",
+        "price": "14002"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.9",
+        "price": "14002"
+      },
+      {
+        "title": "鼓楼广场中心地段黄金门面招租",
+        "sale_type": "出租",
+        "location": "鼓楼 鼓楼周边",
+        "type": "商业街卖场",
+        "area": "35.9",
+        "price": "14002"
+      }
+    ]
+  },
+  
+  "tengpu_best": {
+    "intro": " --- 腾铺优选 --- ",
+    "recmond01": {
+      "intro": " --- 推荐组1 --- ",
+      "first": {
+        "intro": " --- 首推大图 --- ",
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.3,
+        "price": 14000
+      },
+      "list": [
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        }
+      ]
+    },
+    "recmond02": {
+      "intro": " --- 推荐组2 --- ",
+      "first": {
+        "intro": " --- 首推大图 --- ",
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.6,
+        "price": 14000
+      },
+      "list": [
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        }
+      ]
+    },
+    "recmond03": {
+      "intro": " --- 推荐组3 --- ",
+      "first": {
+        "intro": " --- 首推大图 --- ",
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.3,
+        "price": 14000
+      },
+      "list": [
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        }
+      ]
+    }
+  },
+  
+  "newest_baoliao": {
+    "intro": " --- 最新爆料 --- ",
+    "first": {
+      "intro": " --- 首推大图 --- ",
+      "link": "/info/0/details",
+      "img": "img/store-pic.jpg",
+      "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+      "sale_type": "转让",
+      "location": "雨花台 西善桥",
+      "type": "商业街卖场",
+      "area": 35.2,
+      "price": 14000
+    },
+    "list": [
+      {
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.2,
+        "price": 14001
+      },
+      {
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.2,
+        "price": 14002
+      },
+      {
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.2,
+        "price": 14003
+      },
+      {
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.2,
+        "price": 14004
+      },
+      {
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.2,
+        "price": 14005
+      },
+      {
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.2,
+        "price": 14006
+      }
+    ]
+  }
+}

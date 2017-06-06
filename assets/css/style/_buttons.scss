@@ -1,0 +1,143 @@
+.btn {
+  @include border-radius($input-border-radius);}
+
+.btn-theme {
+  color: $brand-theme;
+  background-color: #fff;
+  border-color: $brand-theme-light;
+  border-width:2px;
+
+  &:focus,
+  &.focus,
+  &:hover {
+    color: #fff;
+    background-color: $brand-theme-light;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: #fff;
+    background-color: $brand-theme;
+        border-color: $brand-theme;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: #fff;
+      background-color: $brand-theme-dark;
+          border-color: $brand-theme-dark;
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: #fff;
+          border-color: $gray-line;
+                 color: $gray-line;
+    }
+	}
+}
+.btn-theme-line {
+  color: $brand-theme;
+  background-color: none;
+  border-color: $brand-theme;
+
+  &:focus,
+  &.focus,
+  &:hover {
+    color:$brand-theme-word;
+    background-color: $brand-theme;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $brand-theme-word;
+    background-color: $brand-theme;
+        border-color: $brand-theme;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color:$brand-theme-word;
+      background-color: $brand-theme-dark;
+          border-color: $brand-theme-dark;
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $brand-theme-word;
+          border-color: $gray-line;
+                 color: $gray-line;
+    }
+  }
+}
+.btn-match {
+  @include button-variant($btn-match-color, $btn-match-bg, $btn-match-border);
+}
+
+.btn-dark {
+  @include button-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);
+}
+
+.btn-link {
+  color: $brand-dark;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+.btn{padding-left:20px;padding-right:20px;}
+.btn-lg{padding-left:30px;padding-right:30px;}

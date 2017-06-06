@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "code": "TENGPU",
+    "name": "腾铺认证"
+  },
+  {
+    "id": 2,
+    "code": "PERSONAL",
+    "name": "个人信息"
+  }
+]

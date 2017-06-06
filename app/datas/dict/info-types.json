@@ -1,0 +1,46 @@
+{
+  "list": [
+    "Attorn",
+    "Lease",
+    "Sell",
+    "Invite",
+    "SeekLease",
+    "SeekSell",
+    "Other"
+  ],
+  "Attorn": {
+    "id": 1,
+    "code": "Attorn",
+    "name": "转让"
+  },
+  "Lease": {
+    "id": 2,
+    "code": "Lease",
+    "name": "出租"
+  },
+  "Sell": {
+    "id": 3,
+    "code": "Sell",
+    "name": "出售"
+  },
+  "Invite": {
+    "id": 4,
+    "code": "Invite",
+    "name": "招商"
+  },
+  "SeekLease": {
+    "id": 5,
+    "code": "SeekLease",
+    "name": "求租"
+  },
+  "SeekSell": {
+    "id": 6,
+    "code": "SeekSell",
+    "name": "求售"
+  },
+  "Other": {
+    "id": 7,
+    "code": "Other",
+    "name": "其他"
+  }
+}

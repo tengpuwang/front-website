@@ -1,0 +1,34 @@
+.list-groom{
+	margin-top:-20px;
+	.media{
+		padding:10px 20px;
+		.media-heading{@include size(80%,44px);overflow:hidden;font-size:$font-size-large;line-height:1.3}
+		.media-left,
+		.media-right{white-space: nowrap;}
+		.media-right{
+			text-align:right;
+			p{
+				color:$gray-lighter;
+				&.ing{color:$brand-theme;}
+			}
+		}
+		&.top{
+			background:$gray-bg;line-height:36px;
+			.media-body{text-align:right;}
+			a{margin-left:10px}
+		}
+		input{margin-right:10px;}
+		.do{
+			a{margin-left:5px;}
+		}
+		&:not(.top){ 
+			.media-body{
+				border-bottom:1px solid $gray-line;
+				p{color:$gray-lighter;}
+			}
+			.media-right{border-bottom:1px solid $gray-line;}
+		}
+	}
+}
+
+.groom-con{padding:0 60px;}

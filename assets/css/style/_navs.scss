@@ -1,0 +1,131 @@
+//
+// Navs
+// --------------------------------------------------
+
+
+// Base class
+// --------------------------------------------------
+
+.nav {
+
+  > li {
+
+    > a {
+
+	  color:$brand-dark-light;
+      &:hover,
+      &:focus {
+      background:none;
+      }
+
+	  > span{
+	  background:$brand-dark-lighter;
+	  }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+
+      &:hover,
+      &:focus {
+      }
+    }
+  }
+
+  // Open dropdowns
+  .open > a {
+    background:none;
+
+    &,
+    &:hover,
+    &:focus {
+    }
+  }
+}
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav-tabs {
+  > li {
+
+    // Actual tabs (as links)
+    > a {
+     
+      &:hover {
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $nav-tabs-active-link-hover-bg;
+      }
+    }
+  }
+}
+
+
+// Pills
+// -------------------------
+.nav-pills {
+  > li {
+
+    // Links rendered as pills
+    > a {
+    }
+
+    // Active state
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-pills-active-link-hover-color;
+        background-color: $nav-pills-active-link-hover-bg;
+      }
+    }
+  }
+}
+
+
+.navbar-default .navbar-nav {
+
+  >li{
+    >.dropdown-menu{
+      @include border-radius($border-radius-base);
+      min-width:100%;
+      padding:0;
+      >li{
+        border-bottom:1px solid $gray-line;
+        &:last-child{border:none;}
+        a{
+          line-height:2;
+          &:first-child{@include border-top-radius($border-radius-base);@include border-right-radius($border-radius-base);}
+          &:last-child{@include border-bottom-radius($border-radius-base);@include border-left-radius($border-radius-base);}
+
+          &:hover,
+          &:focus{color:$brand-theme;}
+        }
+      }
+    }
+  }
+
+  // Open dropdowns
+  .open > a {
+      &,
+      &:hover,
+      &:focus{background:none;color:$brand-theme;
+      > i.fa-angle-down{color:$gray-lighter;}
+      }
+    }
+    }
+
+
+
+
+
+

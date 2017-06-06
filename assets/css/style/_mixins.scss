@@ -1,0 +1,82 @@
+// Sizing shortcuts
+
+@mixin backgroundY($top, $bottom) {
+	background: -webkit-linear-gradient($top, $bottom); 
+	background: -o-linear-gradient($top, $bottom); 
+	background: -moz-linear-gradient($top, $bottom); 
+	background: linear-gradient($top, $bottom); 
+}
+
+@mixin backgroundX($left, $right) {
+	background: -webkit-linear-gradient(left, $left , $right); 
+  	background: -o-linear-gradient(right, $left, $right); 
+ 	background: -moz-linear-gradient(right, $left, $right); 
+  	background: linear-gradient(to right, $left , $right); 
+}
+
+@mixin center(){
+	position:absolute;
+	top:50%;
+	left:50%;
+	@include translate(-50%,-50%);
+}
+@mixin centerY(){
+	position:absolute;
+	top:50%;
+	@include translate(0,-50%);
+}
+@mixin centerX(){
+	position:absolute;
+	left:50%;
+	@include translate(-50%,0);
+}
+
+@mixin text-shadow($shadow...) {
+  -webkit-text-shadow: $shadow; // iOS <4.3 & Android <4.1
+     -moz-text-shadow: $shadow;
+       -o-text-shadow: $shadow;
+          text-shadow: $shadow;
+}
+
+@mixin tit-line($width,$bg){
+	position:relative;
+	> *{padding:0 20px;background:$bg;position:relative;z-index:10;}
+	&:before{margin-top:1px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	@include translate(-50%,-50%);@include size($width,1px);content:"";background:rgba(0,0,0,.07);z-index:9;}
+}
+
+@mixin store-nopic(){
+	display:block;
+	.media-body{display:block;width:auto;}
+	.media-left{display:none;}
+	.media-body{
+		.media-heading,.media-heading+p{@include text-overflow();}
+	}
+}
+
+
+@mixin btn-noline(){
+	.btn-default,
+	.btn-default:active:hover,
+	.btn-default:active:focus,
+	.btn-default.focus:active,
+	.btn-default.active:hover,
+	.btn-default.active:focus,
+	.btn-default.active.focus,
+	&.open > .btn-default.dropdown-toggle:hover,
+	&.open > .btn-default.dropdown-toggle:focus,
+	&.open > .btn-default.dropdown-toggle.focus{background:none;border:none;@include box-shadow(0 0 0 rgba(0,0,0,0));}
+}
+
+@mixin span-jg(){
+	padding-right:15px;position:relative;
+	&:before{content:"/";position:absolute;right:5px;top:-1px;@include opacity(.2);}
+	&:last-child{padding:0;}
+	&:last-child:before{content:"";}
+}
+@mixin point(){
+	position:absolute;top:-50px;left:-50px;@include square(100px);background:$blue;@include rotate(-45deg);text-align:center;line-height:170px;color:#fff;font-size:150%;font-family:STXingkai;
+}

@@ -1,0 +1,29 @@
+@import "bootstrap/mixins";
+@import "style/mixins";
+
+
+
+// Core CSS
+@import "style/variables";
+@import "style/forms";
+@import "style/buttons";
+
+// Components
+@import "style/badges";
+@import "style/progress-bars";
+@import "style/navs";
+@import "style/pagination";
+@import "style/list-group";
+
+
+@import "style/layout";
+@import "style/main";
+
+//website Area Style
+@import "style/area/book";//书城
+@import "style/area/class";//班级管理
+@import "style/area/cart";//购物车
+@import "style/area/point";//积分商城
+@import "style/area/match";//活动专区
+@import "style/area/groom";//在线推书
+

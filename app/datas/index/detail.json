@@ -1,0 +1,244 @@
+{
+  "you_best": {
+    "intro": " --- 猜你喜欢 --- ",
+    "recmond01": {
+      "intro": " --- 推荐组1 --- ",
+      "first": {
+        "intro": " --- 首推大图 --- ",
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.3,
+        "price": 14000
+      },
+      "list": [
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        }
+      ]
+    },
+    "recmond02": {
+      "intro": " --- 推荐组2 --- ",
+      "first": {
+        "intro": " --- 首推大图 --- ",
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.6,
+        "price": 14000
+      },
+      "list": [
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.8,
+          "price": 14000
+        }
+      ]
+    },
+    "recmond03": {
+      "intro": " --- 推荐组3 --- ",
+      "first": {
+        "intro": " --- 首推大图 --- ",
+        "link": "/info/0/details",
+        "img": "img/store-pic.jpg",
+        "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+        "sale_type": "转让",
+        "location": "雨花台 西善桥",
+        "type": "商业街卖场",
+        "area": 35.3,
+        "price": 14000
+      },
+      "list": [
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        },
+        {
+          "link": "/info/0/details",
+          "img": "img/store-pic.jpg",
+          "title": "市中心：十字路口超好旺铺转十字路口超好旺铺转",
+          "sale_type": "转让",
+          "location": "雨花台 西善桥",
+          "type": "商业街卖场",
+          "area": 35.5,
+          "price": 14000
+        }
+      ]
+    }
+  },
+  
+  "bus_station": {
+    "intro": " --- 交通设施 --- ",
+    "stations": [
+      {
+        "name": "运河路320国道口",
+        "bus": ["432路", "781路"],
+        "distance": 371
+      },
+      {
+        "name": "老鸦桥",
+        "bus": ["321路", "338路", "341区间", "397路", "781路"],
+        "distance": 466
+      },
+      {
+        "name": "沿山村",
+        "bus": ["781路"],
+        "distance": 670
+      },
+      {
+        "name": "水洪庙北",
+        "bus": ["341区间"],
+        "distance": 766
+      },
+      {
+        "name": "泰山村南",
+        "bus": ["432路"],
+        "distance": 999
+      },
+      {
+        "name": "水洪庙",
+        "bus": ["321路", "338路", "391路", "397路", "432路", "505路"],
+        "distance": 1062
+      },
+      {
+        "name": "崇贤一小沿山校区",
+        "bus": ["781路"],
+        "distance": 1062
+      },
+      {
+        "name": "崇贤一小沿山校区",
+        "bus": ["341区间"],
+        "distance": 1068
+      },
+      {
+        "name": "龙口浜",
+        "bus": ["341区间"],
+        "distance": 1075
+      },
+      {
+        "name": "南山",
+        "bus": ["321路", "338路", "341区间", "397路", "781路"],
+        "distance": 1116
+      },
+      {
+        "name": "沈家浜",
+        "bus": ["321路", "338路"],
+        "distance": 1565
+      },
+      {
+        "name": "泰山村理河坝",
+        "bus": ["432路"],
+        "distance": 1673
+      },
+      {
+        "name": "应家木桥",
+        "bus": ["341区间"],
+        "distance": 1774
+      }
+    ]
+  }
+}

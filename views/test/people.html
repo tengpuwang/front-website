@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+People
+{% endblock %}
+
+{% block body %}
+<ul>
+    {% for person in people %}
+    <li><a href="/people/{{ loop.index0 }}">{{ person.name }}</a> age {{ person.age }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<div>
+    {{ key }}
+</div>
+
+{% endblock %}

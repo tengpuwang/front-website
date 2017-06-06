@@ -1,0 +1,27 @@
+//
+// Badges
+// --------------------------------------------------
+
+.badge {
+  background-color: $badge-bg;
+  color:$gray-lighter;
+  font-weight:normal;
+  line-height:18px;
+  @include border-radius(20px);
+
+  // [converter] extracted a& to a.badge
+
+  // Account for badges in navs
+  .list-group-item.active > &,
+  .nav-pills > .active > a > & {
+    color: $badge-active-color;
+    background:$brand-theme-light;
+  }
+
+  .list-group-item:hover > &,
+  .nav-pills > :hover > a > & {
+    color: #fff;
+    background:$gray-light;
+  }
+
+}

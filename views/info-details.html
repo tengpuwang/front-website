@@ -1,0 +1,293 @@
+{% extends '_layout/layout.html' %}
+
+<!-- main-content block-->
+{% block main-content %}
+
+<div id="detail">
+  <div class="top container-fluid">
+    <div class="row container">
+      <div class="col-lg-6 col-md-6 col-sm-6 pic">
+        <a href="#" title="查看大图" data-toggle="modal" data-target="#myPic"><i class="fa fa-arrows-alt"></i></a>
+        <div id="store-pic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            {% for img in info.images %}
+              {% if loop.first %}
+                <li data-target="#store-pic" data-slide-to="{{ loop.index0 }}" class="active"></li>
+              {% else %}
+                <li data-target="#store-pic" data-slide-to="{{ loop.index0 }}"></li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            {% for img in info.images %}
+              {% if loop.first %}
+                <div class="item active">
+                  <img src="{{ img|watermark }}" alt="...">
+                </div>
+              {% else %}
+                <div class="item">
+                  <img src="{{ img|watermark }}" alt="...">
+                </div>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#store-pic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left fa fa-angle-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#store-pic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right fa fa-angle-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 brief">
+        <h3 class="tit">
+          <small>{{ info.infoType|infoType }}</small>
+          <strong>{{ info.title }}</strong>
+        </h3>
+        <ul class="list-inline do">
+          <li>编号：<span>{{ info.no }}</span></li>
+          <li>已被浏览：<span>{{ info.viewCount }}</span>次</li>
+          <li class="text-right">
+            <span><i class="fa fa-star"></i>已收藏</span>
+            <a href="#"><i class="fa fa-exchange"></i>加入对比</a>
+          </li>
+        </ul>
+        <div class="price row">
+          <div class="col-lg-7 col-md-7 col-xs-7">
+            <dl class="dl-horizontal">
+              <dt>租　金 :</dt>
+              <dd><strong>{{ info.estate.rental }}</strong>元/月</dd>
+              <dt>转让费 :</dt>
+              <dd><strong>{{ info.estate.transferFee }}</strong>元</dd>
+            </dl>
+          </div>
+          <div class="col-lg-5 col-md-5 col-xs-5 size">
+            <small>店铺面积</small>
+            <strong>{{ info.estate.area }}</strong>
+            <span>m<sup>2</sup></span>
+          </div>
+        </div>
+        <dl class="dl-horizontal">
+          <dt>区域商圈 :</dt>
+          <dd><a href="#">{{ info.estate.district }}</a><a href="#">{{ info.estate.street }}</a><span>{{ info.estate.shopArea }}</span>
+          </dd>
+          <dt>详细地址 :</dt>
+          <dd>{{ info.estate.location }}</dd>
+          <dt>地铁站点 :</dt>
+          <dd><span>{{ info.estate.subway }}</span>-<span>{{ info.estate.station }}</span></dd>
+          <dt>商铺类型 :</dt>
+          <dd>{{ info.estate.type }}</dd>
+          <dt>行业业务 :</dt>
+          <dd><span>{{ info.estate.tradeBusiness['01'] }}</span><span>{{ info.estate.tradeBusiness['02'] }}</span></dd>
+          <dt>营业状态 :</dt>
+          <dd>{{ info.estate.businessStatus.status }}
+            {% if info.estate.businessStatus.bak %}
+              <span class="label label-theme">{{ info.estate.businessStatus.bak }}</span>
+            {% endif %}
+          </dd>
+        </dl>
+        <div class="tel media">
+          {% if info.isPreference %}
+            <div class="media-left media-middle">
+              <span class="att ok"><i class="fa fa-check"></i>腾铺认证信息</span>
+            </div>
+          {% endif %}
+          <div class="media-body media-middle">
+            <p>{{ info.contact.type }}&nbsp;{{ info.contact.name }}<strong>{{ info.contact.phone || info.contact.qq || info.contact.weixin }}</strong></p>
+            <small>联系我时，请说明是在腾铺网看到的，谢谢！</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	<div class="review container">
+		<h4 class="text-center"><strong>腾铺详情</strong></h4>
+		<div class="con">
+			{{ (info.content|raw) || '暂无详情介绍' }}
+		</div>
+	</div>
+  <div class="review container">
+    <h4 class="text-center"><strong>腾铺点评</strong></h4>
+    <div class="con">
+      {{ (info.comment|raw) || '暂无点评' }}
+      <!--<p>根据学校发展需要移址，现有苏州市吴江区一所非学历教育培训机构转让原校区，执照齐全，面积1000平方米，豪华装修（目前相对高端）9成新。</p>-->
+      <!--<p>1.有独立沿街门面进校区。配备日本进口自动门，全套考勤和出入系统。带有2台挂式电脑进行校区信息显示。</p>-->
+      <!--<p>2.独立的家长休闲等候区，德国德龙全自动咖啡机，一体化定制沙发，12台ipad包含定制游戏供学生等候时使用。3台台式电脑提供给家长实时资讯查询。</p>-->
+    </div>
+  </div>
+
+  <!-- 地图周边 -->
+  <div class="around container" style="display: none">
+    <h4 class="text-center"><strong>周边设施</strong></h4>
+    <div class="con row">
+      <div class="col-lg-6 map">百度地图</div>
+      <div class="col-lg-6 life-detail">
+        <ul class="nav nav-pills" role="tablist" id="life-tab">
+          <li role="presentation" class="active" id="life-tab-tra" class="active"><a href="#bus" role="tab" data-toggle="tab">交通设施</a>
+          </li>
+          <li role="presentation" id="life-tab-biz"><a href="#facility" role="tab" data-toggle="tab">商业配套</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="life-list tab-pane active" id="bus">
+            {% set bs = bus_station.stations  %}
+            <p>
+              <span id="life-list-count">{{ bs.length }}个公交站</span>
+              <small id="life-list-type">2公里内的交通设施</small>
+            </p>
+            <ul id="life-list" class="list-ul clearfix yahei">
+              {% for station in bs %}
+                <li id="list-{{ loop.index }}">
+                  <i class="bus"></i>
+                  <p>{{ station.name }}
+                      <small>({% for bus in station.bus %} {{ bus }}; {% endfor %})</small>
+                  </p>
+                  <span class="distance gray"> {{ station.distance }} 米</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="facility">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 相关推荐 -->
+  <div class="fav"  style="display: none">
+    <h4 class="text-center"><strong><i class="fa fa-heart-o"></i>猜你喜欢</strong></h4>
+    <div id="choose" class="index-choose container">
+      <div class="list row">
+        <div class="col-lg-4 col-md-4">
+          {% set yb_first01 = you_best.recmond01.first  %}
+          <div class="item-store pic">
+            <div class="point">优选</div>
+            <img src="../../{{ yb_first01.img }}" alt="">
+            <div class="con">
+              <div class="tit"><strong>{{ yb_first01.title }}</strong></div>
+              <dl>
+                <dt>[{{ yb_first01.sale_type }}]</dt>
+                <dd>{{ yb_first01.location }}</dd>
+                <dd><strong>{{ yb_first01.area }}</strong>m<sup name="">2</sup></dd>
+                <dd><strong>{{ yb_first01.price }}</strong>元/月</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="con">
+            {% set yb_list01 = you_best.recmond01.list %}
+            {% for rec01 in yb_list01 %}
+              <div class="item-store media">
+                <div class="media-left">
+                  <div class="point sm">优选</div>
+                  <img src="../../{{ rec01.img }}" alt="">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><strong>{{ rec01.title }}</strong></h4>
+                  <p>
+                    <strong>[{{ rec01.sale_type }}]</strong>
+                    <span>{{ rec01.location }}</span>
+                    <span>{{ rec01.type }}</span>
+                  </p>
+                  <p>
+                    <span><strong>{{ rec01.area }}</strong>m<sup name="">2</sup></span>
+                    <span><strong>{{ rec01.price }}</strong>元/月</span>
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          {% set yb_first02 = you_best.recmond02.first  %}
+          <div class="item-store pic">
+            <div class="point">优选</div>
+            <img src="../../{{ yb_first01.img }}" alt="">
+            <div class="con">
+              <div class="tit"><strong>{{ yb_first02.title }}</strong></div>
+              <dl>
+                <dt>[{{ yb_first02.sale_type }}]</dt>
+                <dd>{{ yb_first02.location }}</dd>
+                <dd><strong>{{ yb_first02.area }}</strong>m<sup name="">2</sup></dd>
+                <dd><strong>{{ yb_first02.price }}</strong>元/月</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="con">
+            {% set yb_list02 = you_best.recmond02.list %}
+            {% for rec02 in yb_list02 %}
+              <div class="item-store media">
+                <div class="media-left">
+                  <div class="point sm">优选</div>
+                  <img src="../../{{ rec02.img }}" alt="">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><strong>{{ rec02.title }}</strong></h4>
+                  <p>
+                    <strong>[{{ rec02.sale_type }}]</strong>
+                    <span>{{ rec02.location }}</span>
+                    <span>{{ rec02.type }}</span>
+                  </p>
+                  <p>
+                    <span><strong>{{ rec02.area }}</strong>m<sup name="">2</sup></span>
+                    <span><strong>{{ rec02.price }}</strong>元/月</span>
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          {% set yb_first03 = you_best.recmond03.first  %}
+          <div class="item-store pic">
+            <div class="point">优选</div>
+            <img src="../../{{ yb_first01.img }}" alt="">
+            <div class="con">
+              <div class="tit"><strong>{{ yb_first03.title }}</strong></div>
+              <dl>
+                <dt>[{{ yb_first03.sale_type }}]</dt>
+                <dd>{{ yb_first03.location }}</dd>
+                <dd><strong>{{ yb_first03.area }}</strong>m<sup name="">2</sup></dd>
+                <dd><strong>{{ yb_first03.price }}</strong>元/月</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="con">
+            {% set yb_list03 = you_best.recmond03.list %}
+            {% for rec03 in yb_list03 %}
+              <div class="item-store media">
+                <div class="media-left">
+                  <div class="point sm">优选</div>
+                  <img src="../../{{ rec03.img }}" alt="">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><strong>{{ rec03.title }}</strong></h4>
+                  <p>
+                    <strong>[{{ rec03.sale_type }}]</strong>
+                    <span>{{ rec03.location }}</span>
+                    <span>{{ rec03.type }}</span>
+                  </p>
+                  <p>
+                    <span><strong>{{ rec03.area }}</strong>m<sup name="">2</sup></span>
+                    <span><strong>{{ rec03.price }}</strong>元/月</span>
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

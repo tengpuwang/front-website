@@ -1,0 +1,233 @@
+$bootstrap-sass-asset-helper: false !default;
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 70%) !default; // #999
+$gray-line:              lighten($gray-base, 93.5%) !default; // #eee
+$gray-bg:                #f9f9f9 !default; // #f9f9f9
+
+$brand-theme:           #a46497 !default;
+$brand-match:           #fc0 !default;
+$brand-dark:            #6d7b88 !default;
+
+
+$brand-theme-bg:         lighten($brand-theme, 40%) !default;
+$brand-theme-lighter:    lighten($brand-theme, 25%) !default;
+$brand-theme-light:      lighten($brand-theme, 15%) !default;
+$brand-theme-dark:       darken($brand-theme, 10%) !default;
+$brand-theme-word:       #fff !default;
+$brand-match-bg:         lighten($brand-match, 40%) !default;
+$brand-match-lighter:    lighten($brand-match, 25%) !default;
+$brand-match-light:      lighten($brand-match, 15%) !default;
+$brand-match-dark:       darken($brand-match, 10%) !default;
+$brand-match-word:       #fff !default;
+$brand-dark-bg:          lighten($brand-dark, 50%) !default;
+$brand-dark-lighter:     lighten($brand-dark, 30%) !default;
+$brand-dark-light:       lighten($brand-dark, 15%) !default;
+$brand-dark-dark:        darken($brand-dark, 10%) !default;
+$brand-dark-word:        #fff !default;
+
+$orange:                #ffb061 !default;
+$orange-dark:           #fe7f10 !default;
+$orange-bg:             #fff9e9 !default;
+$orange-light:          #f5b945 !default;
+$blue:                  #00c0ff !default;
+$blue-dark:             darken($blue, 10%) !default;
+$purple:                #b179da !default;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//## Background color for `<body>`
+$body-bg:               #fff !default;
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//## Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          14px !default;
+$font-size-large:         16px !default; // ~16px
+$font-size-small:         12px !default; // ~12px
+
+$font-size-h1:            24px !default; // ~24px
+$font-size-h2:            20px !default; // ~20px
+$font-size-h3:            18px !default; // ~20px
+$font-size-h4:            16px !default; // ~16px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            12px !default; // ~12px
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+
+$border-radius-base:        4px !default;
+$border-radius-all:        100% !default;
+
+
+//## Global textual link color.
+$link-color:            $brand-theme !default;
+//## Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+//## Link hover decoration.
+$link-hover-decoration: underline !default;
+
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                normal !default;
+
+
+$btn-theme-color:              $brand-theme !default;
+$btn-theme-bg:                 #fff !default;
+$btn-theme-border:             $brand-theme-light !default;
+
+$btn-theme-line-color:         $brand-theme !default;
+$btn-theme-line-bg:            rgba(0,0,0,0) !default;
+$btn-theme-line-border:        $brand-theme !default;
+
+$btn-match-color:              $brand-match-word !default;
+$btn-match-bg:                 #ffd42f !default;
+$btn-match-border:             darken(#ffd42f, 5%) !default;
+
+$btn-dark-color:              #fff !default;
+$btn-dark-bg:                 $brand-dark !default;
+$btn-dark-border:             darken($btn-dark-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+
+//## Border color for inputs on focus
+$input-border-focus:             $brand-theme !default;
+
+
+//## Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff !default;
+//## Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $brand-theme !default;
+
+
+
+//== Progress bars
+//
+//##
+
+//## Background color of the whole progress component
+$progress-bg:                 #f5f5f5 !default;
+//## Progress bar text color
+$progress-bar-color:          #fff !default;
+//## Variable for setting rounded corners on progress bar.
+$progress-border-radius:      $border-radius-base !default;
+
+//## Default progress bar color
+$progress-bar-bg:             $brand-match !default;
+//## Success progress bar color
+$progress-bar-success-bg:     $brand-match !default;
+
+
+
+
+//== List group
+//
+//##
+
+//## Background color on `.list-group-item`
+$list-group-bg:                 #fff !default;
+//## `.list-group-item` border color
+$list-group-border:             $gray-line !default;
+//## List group border radius
+$list-group-border-radius:      0 !default;
+
+//## Text color of active list items
+$list-group-active-color:       $component-active-color !default;
+//## Background color of active list items
+$list-group-active-bg:          $component-active-bg !default;
+//## Border color of active list elements
+$list-group-active-border:      $list-group-active-bg !default;
+//## Text color for content within active list items
+$list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
+
+
+
+//== Badges
+//
+//##
+
+$badge-bg:                    $gray-line !default;
+//## Badge text color in active nav link
+$badge-active-color:          #fff !default;
+
+
+
+//== Navs
+//
+//##
+
+
+
+$nav-tabs-active-link-hover-bg:             $body-bg !default;
+$nav-tabs-justified-active-link-border-color:     $body-bg !default;
+
+//== Pills
+$nav-pills-active-link-hover-bg:            $brand-match !default;
+$nav-pills-active-link-hover-color:         $gray !default;
+
+
+
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $brand-dark-light !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    #ddd !default;
+
+$pagination-hover-color:               #fff !default;
+$pagination-hover-bg:                  $brand-match-lighter !default;
+$pagination-hover-border:              $brand-match-lighter !default;
+
+$pagination-active-color:              #fff !default;
+$pagination-active-bg:                 $brand-match !default;
+$pagination-active-border:             $brand-match !default;
+
+$pagination-disabled-color:            $gray-light !default;
+$pagination-disabled-bg:               #fff !default;
+$pagination-disabled-border:           #ddd !default;
+
+
+//== Forms
+//
+//##
+
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//## Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            40px !default;
+//## Large `.form-control` border radius
+$input-border-radius-large:      40px !default;
+//## Small `.form-control` border radius
+$input-border-radius-small:      40px !default;

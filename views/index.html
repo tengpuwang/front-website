@@ -1,0 +1,563 @@
+{% extends '_layout/layout.html' %}
+
+<!-- main-content block-->
+{% block main-content %}
+
+<!-- 菜单栏 -->
+<div id="menu" class="index container-fluid">
+    <div class="con container">
+        <div class="menu">
+            <ul>
+                {% for menu in menus %}
+                <li>
+                    <a href="/info/attorn/search?category={{ menu.name }}">
+                        <i class="{{ menu.class }}"></i>
+                        {{ menu.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="/info/attorn/search" class="in"><strong>我要找店</strong>
+            <small>我要找店</small>
+        </a>
+        <a href="javascript:;" class="out"><strong>我要转店</strong>
+            <small>我要转店</small>
+        </a>
+    </div>
+</div>
+
+
+<div id="new" class="index-new container">
+    <h3 class="text-center">
+        <strong>最新<em>爆</em>料</strong>
+        <small style="display: none">
+            <a href="javascript:;">三天内</a>
+            <a href="javascript:;">一周内</a>
+            <a href="/info/attorn/search">更多</a>
+        </small>
+    </h3>
+    <div class="list">
+        <!-- 最新爆料 大图-->
+        <div class="item-store pic">
+            {% set first = advs.adsense1[0] %}
+            <a href="/info/{{ first.id }}/details" target="_blank">
+                <img src="{{ first.images[0]|watermark }}" alt="">
+            </a>
+            <div class="con">
+                <div class="tit"><strong>{{ first.title }}</strong></div>
+                <dl>
+                    <dt>[ {{ (info_type[first.infoType] && info_type[first.infoType].name) || first.infoType }} ]</dt>
+                    <dd>{{ first.estate.location }}</dd>
+                    <dd><strong>{{ first.estate.area }}</strong>m<sup name="">2</sup></dd>
+                    <dd><strong>{{ first.estate.rental }}</strong>元/月</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- 最新爆料 小图List -->
+        <div class="row">
+            {% set biaoliao_list = advs.adsense2 %}
+            {% for bl in biaoliao_list %}
+            <div class="col-md-6 col-lg-6 tengpu-link" data-url="/info/{{ bl.id }}/details">
+                <div class="item-store media">
+                    <div class="media-left"><img src="{{ bl.images[0]|watermark }}" alt=""></div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ bl.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ (info_type[bl.infoType] && info_type[bl.infoType].name) || bl.infoType
+                                }}]</strong>
+                            <span>{{ bl.estate.location }}</span>
+                            <span>{{ bl.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ bl.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ bl.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div id="fast" class="collapse navbar-collapse nav-fast">
+            <ul class="nav navbar-nav">
+                <li><a href="#new">最新爆料</a></li>
+                <li><a href="#choose">腾铺优选 </a></li>
+                <li><a href="#out">一周快转</a></li>
+                <li><a href="#lease">租售推荐</a></li>
+                <li><a href="#other">个人发布</a></li>
+                <li><a href="#top"><i class="fa fa-angle-up"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="choose" class="index-choose container">
+    <h3 class="text-center"><strong>腾铺<em>优</em>选</strong></h3>
+    <div class="list row">
+        <!-- 腾铺优选01 -->
+        <div class="col-lg-4 col-md-4">
+            <!-- 腾铺优选大图1 -->
+            {% set tp_first01 = advs.adsense3[0] %}
+            {% if tp_first01 %}
+            <div class="item-store pic tengpu-link index-dt" data-url="/info/{{ tp_first01.id }}/details">
+                <div class="point">优选</div>
+                <img src="{{ tp_first01.images[0]|watermark }}" alt="">
+                <div class="con">
+                    <div class="tit"><strong>{{ tp_first01.title }}</strong></div>
+                    <dl>
+                        <dt>[{{ tp_first01.infoType|infoType }}]</dt>
+                        <dd>{{ tp_first01.estate.location }}</dd>
+                        <dd><strong>{{ tp_first01.estate.area }}</strong>m<sup name="">2</sup></dd>
+                        <dd><strong>{{ tp_first01.estate.rental }}</strong>元/月</dd>
+                    </dl>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="con">
+                <!--腾铺优选小图1-->
+                {% set tp_second01 = advs.adsense4[0] %}
+                {% if tp_second01 %}
+                <div class="item-store media tengpu-link" data-url="/info/{{ tp_second01.id }}/details">
+                    <div class="media-left">
+                        <div class="point sm">优选</div>
+                        <img src="{{ tp_second01.images[0]|watermark }}" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ tp_second01.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ tp_second01.infoType|infoType }}]</strong>
+                            <span>{{ tp_second01.estate.location }}</span>
+                            <span>{{ tp_second01.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ tp_second01.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ tp_second01.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+                <!-- 腾铺优选 无图 0~2 -->
+                {% set tp_list01 = advs.adsense5|arrty_get(0, 3) %}
+                {% for tpl in tp_list01 %}
+                <div class="item-store media tengpu-link" data-url="/info/{{ tpl.id }}/details">
+                    <div class="media-left">
+                        <div class="point sm">优选</div>
+                        <img src="{{ tpl.images[0]|watermark }}" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ tpl.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ tpl.infoType|infoType }}]</strong>
+                            <span>{{ tpl.estate.location }}</span>
+                            <span>{{ tpl.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ tpl.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ tpl.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 腾铺优选02 -->
+        <div class="col-lg-4 col-md-4">
+            <!-- 腾铺优选大图2 -->
+            {% set tp_first02 = advs.adsense3[1] %}
+            <div class="item-store pic tengpu-link index-dt" data-url="/info/{{ tp_first02.id }}/details">
+                <div class="point">优选</div>
+                <img src="{{ tp_first02.images[0]|watermark }}" alt="">
+                <div class="con">
+                    <div class="tit"><strong>{{ tp_first02.title }}</strong></div>
+                    <dl>
+                        <dt>[{{ tp_first02.infoType|infoType }}]</dt>
+                        <dd>{{ tp_first02.estate.location }}</dd>
+                        <dd><strong>{{ tp_first02.estate.area }}</strong>m<sup name="">2</sup></dd>
+                        <dd><strong>{{ tp_first02.estate.rental }}</strong>元/月</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="con">
+                <!--腾铺优选小图2-->
+                {% set tp_second02 = advs.adsense4[1] %}
+                {% if tp_second02 %}
+                <div class="item-store media tengpu-link" data-url="/info/{{ tp_second02.id }}/details">
+                    <div class="media-left">
+                        <div class="point sm">优选</div>
+                        <img src="{{ tp_second02.images[0]|watermark }}" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ tp_second02.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ tp_second02.infoType|infoType }}]</strong>
+                            <span>{{ tp_second02.estate.location }}</span>
+                            <span>{{ tp_second02.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ tp_second02.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ tp_second02.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+                <!-- 腾铺优选 无图 3~5 -->
+                {% set tp_list02 = advs.adsense5|arrty_get(3, 3) %}
+                {% for tpl in tp_list02 %}
+                <div class="item-store media tengpu-link" data-url="/info/{{ tpl.id }}/details">
+                    <div class="media-left">
+                        <div class="point sm">优选</div>
+                        <img src="{{ tpl.images[0]|watermark }}" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ tpl.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ tpl.infoType|infoType }}]</strong>
+                            <span>{{ tpl.estate.location }}</span>
+                            <span>{{ tpl.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ tpl.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ tpl.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 腾铺优选03 -->
+        <div class="col-lg-4 col-md-4">
+            <!-- 腾铺优选大图3 -->
+            {% set tp_first03 = advs.adsense3[2] %}
+            <div class="item-store pic tengpu-link index-dt" data-url="/info/{{ tp_first03.id }}/details">
+                <div class="point">优选</div>
+                <img src="{{ tp_first03.images[0]|watermark }}" alt="">
+                <div class="con">
+                    <div class="tit"><strong>{{ tp_first03.title }}</strong></div>
+                    <dl>
+                        <dt>[{{ tp_first03.infoType|infoType }}]</dt>
+                        <dd>{{ tp_first03.estate.location }}</dd>
+                        <dd><strong>{{ tp_first03.estate.area }}</strong>m<sup name="">2</sup></dd>
+                        <dd><strong>{{ tp_first03.estate.rental }}</strong>元/月</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="con">
+                <!--腾铺优选小图3-->
+                {% set tp_second03 = advs.adsense4[2] %}
+                {% if tp_second03 %}
+                <div class="item-store media tengpu-link" data-url="/info/{{ tp_second03.id }}/details">
+                    <div class="media-left">
+                        <div class="point sm">优选</div>
+                        <img src="{{ tp_second03.images[0]|watermark }}" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ tp_second03.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ tp_second03.infoType|infoType }}]</strong>
+                            <span>{{ tp_second03.estate.location }}</span>
+                            <span>{{ tp_second03.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ tp_second03.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ tp_second03.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+                <!-- 腾铺优选 无图 6~8 -->
+                {% set tp_list03 = advs.adsense5|arrty_get(6, 3) %}
+                {% for tpl in tp_list03 %}
+                <div class="item-store media tengpu-link" data-url="/info/{{ tpl.id }}/details">
+                    <div class="media-left">
+                        <div class="point sm">优选</div>
+                        <img src="{{ tpl.images[0]|watermark }}" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><strong>{{ tpl.title }}</strong></h4>
+                        <p>
+                            <strong>[{{ tpl.infoType|infoType }}]</strong>
+                            <span>{{ tpl.estate.location }}</span>
+                            <span>{{ tpl.estate.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ tpl.estate.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ tpl.estate.rental }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="more"><a href="javascript:;">更多</a></div>
+</div>
+
+
+<div id="out" class="index-out container">
+    <div class="quick">
+        <h3><i></i><strong><em>一周快转</em></strong></h3>
+        <div id="week" class="carousel slide" data-ride="carousel">
+            {% set week_trades = advs.adsense6 %}
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#week" data-slide-to="0" class="active"></li>
+                {% if week_trades.length > 6 %}
+                <li data-target="#week" data-slide-to="1"></li>
+                {% endif %}
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="carousel-caption">
+                        <div class="list row">
+                            <!-- 一周快转 -->
+                            {% set kc_page01 = week_trades|arrty_get(0, 6) %}
+                            {% for kc01 in kc_page01 %}
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="item-store media tengpu-link" data-url="/info/{{ kc01.id }}/details">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">{{ kc01.title }}</h4>
+                                        <p><strong>[{{ kc01.infoType|infoType }}]</strong><span>{{ kc01.estate.location }}</span><span>{{ kc01.estate.type }}</span>
+                                        </p>
+                                        <p>
+                                            <span><strong>{{ kc01.estate.area }}</strong>m<sup name="">2</sup></span>
+                                            <span><strong>{{ kc01.estate.rental }}</strong>元/月</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% if week_trades.length > 6 %}
+                <div class="item">
+                    <div class="carousel-caption">
+                        <div class="list row">
+                            {% set kc_page02 = week_trades|arrty_get(6, 6) %}
+                            {% for kc02 in kc_page02 %}
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="item-store media tengpu-link" data-url="/info/{{ kc02.id }}/details">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">{{ kc02.title }}</h4>
+                                        <p><strong>[{{ kc02.infoType|infoType }}]</strong><span>{{ kc02.estate.location }}</span><span>{{ kc02.estate.type }}</span>
+                                        </p>
+                                        <p>
+                                            <span><strong>{{ kc02.estate.area }}</strong>m<sup name="">2</sup></span>
+                                            <span><strong>{{ kc02.estate.rental }}</strong>元/月</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="ok">
+        <h3>最新成交</h3>
+        <div id="deal" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            {% set new_trades = advs.newest_trade %}
+            <ol class="carousel-indicators">
+                <li data-target="#deal" data-slide-to="0" class="active"></li>
+                {% if new_trades.length > 8 %}
+                <li data-target="#deal" data-slide-to="1"></li>
+                {% endif %}
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="carousel-caption">
+                        <div class="list">
+                            <ul>
+                                {% set nt_list01 = newest_trade.page01 %}
+                                {% for nt01 in nt_list01 %}
+                                <li><a href="javascript:;">
+                                    <strong>{{ nt01.user }}</strong>{{ nt01.host }}
+                                    <small>{{ nt01.status }}</small>
+                                    <span class="time">{{ nt01.time }}</span>
+                                </a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <div class="list">
+                            <ul>
+                                {% set nt_list02 = newest_trade.page02 %}
+                                {% for nt02 in nt_list02 %}
+                                <li><a href="javascript:;">
+                                    <strong>{{ nt02.user }}</strong>{{ nt02.host }}
+                                    <small>{{ nt02.status }}</small>
+                                    <span class="time">{{ nt02.time }}</span>
+                                </a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="lease" class="index-lease container" style="display: none;">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h3><strong>热门出租</strong>
+                <small>Popular rental</small>
+            </h3>
+            <div class="list">
+                {% set sr01_first = sale_rent.hot_rent.first %}
+                <div class="item-store media">
+                    <div class="media-left"><img src="{{ sr01_first.img|watermark }}" alt=""></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ sr01_first.title }}</h4>
+                        <p><strong>[{{ sr01_first.sale_type }}]</strong><span>{{ sr01_first.location }}</span><span>{{ sr01_first.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ sr01_first.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ sr01_first.price }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                <ol>
+                    {% set sr01_list = sale_rent.hot_rent.list %}
+                    {% for sr01 in sr01_list %}
+                    <li>
+                        <span><strong>{{ sr01.area }}</strong>m<sup>2</sup></span>
+                        <a href="javascript:;">{{ sr01.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="term">
+                {% set sr01_lcs = sale_rent.hot_rent.locaitons %}
+                {% for lc01 in sr01_lcs %}
+                <span class="label label-default">{{ lc01.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h3><strong>热门出售</strong>
+
+                <small>Hot sale</small>
+            </h3>
+            <div class="list">
+                {% set sr02_first = sale_rent.hot_sale.first %}
+                <div class="item-store media">
+                    <div class="media-left"><img src="{{ sr02_first.img|watermark }}" alt=""></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ sr02_first.title }}</h4>
+                        <p><strong>[{{ sr02_first.sale_type }}]</strong><span>{{ sr02_first.location }}</span><span>{{ sr02_first.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ sr02_first.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ sr02_first.price }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                <ol>
+                    {% set sr02_list = sale_rent.hot_sale.list %}
+                    {% for sr02 in sr02_list %}
+                    <li>
+                        <span><strong>{{ sr02.area }}</strong>m<sup>2</sup></span>
+                        <a href="javascript:;">{{ sr02.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="term">
+                {% set sr02_lcs = sale_rent.hot_sale.locaitons %}
+                {% for lc02 in sr02_lcs %}
+                <span class="label label-default">{{ lc02.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h3><strong>推荐招商</strong>
+                <small>Recommended investment</small>
+            </h3>
+            <div class="list">
+                {% set sr03_first = sale_rent.rec_busi.first %}
+                <div class="item-store media">
+                    <div class="media-left"><img src="{{ sr03_first.img|watermark }}" alt=""></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ sr03_first.title }}</h4>
+                        <p><strong>[{{ sr03_first.sale_type }}]</strong><span>{{ sr03_first.location }}</span><span>{{ sr03_first.type }}</span>
+                        </p>
+                        <p>
+                            <span><strong>{{ sr03_first.area }}</strong>m<sup name="">2</sup></span>
+                            <span><strong>{{ sr03_first.price }}</strong>元/月</span>
+                        </p>
+                    </div>
+                </div>
+                <ol>
+                    {% set sr03_list = sale_rent.rec_busi.list %}
+                    {% for sr03 in sr03_list %}
+                    <li>
+                        <a href="javascript:;">{{ sr03.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="term">
+                {% set sr03_lcs = sale_rent.rec_busi.locaitons %}
+                {% for lc03 in sr03_lcs %}
+                <span class="label label-default">{{ lc03.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="other" class="index-other container" style="display: none;">
+    <h3 class="text-center">
+        <small>以下信息为网友发布请自行核对资料的真实性</small>
+    </h3>
+    <div class="list row">
+        {% set _per_pub = per_pub.list %}
+        {% for pp in _per_pub %}
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <div class="item-store media">
+                <div class="media-body">
+                    <h4 class="media-heading">{{ pp.title }}</h4>
+                    <p>
+                        <strong>[{{ pp.sale_type }}]</strong>
+                        <span>{{ pp.location }}</span>
+                        <span>{{ pp.area }}m<sup>2</sup></span>
+                        <span>{{ pp.user }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.carousel').carousel({
+            interval: false
+        });
+        $('body').scrollspy({target: '.nav-fast'});
+        $('#fast').affix({
+            offset: {
+                top: $("#new .list").offset().top
+            }
+        })
+    })
+</script>
+{% endblock %}

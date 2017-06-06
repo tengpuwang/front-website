@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "code": "Store",
+    "name": "商铺"
+  },
+  {
+    "id": 2,
+    "code": "OfficeBuilding",
+    "name": "写字楼"
+  },
+  {
+    "id": 3,
+    "code": "Factory",
+    "name": "厂房"
+  },
+  {
+    "id": 4,
+    "code": "Land",
+    "name": "地皮"
+  },
+  {
+    "id": 5,
+    "code": "StoreHouse",
+    "name": "仓库"
+  },
+  {
+    "id": 6,
+    "code": "Parking",
+    "name": "车位"
+  },
+  {
+    "id": 7,
+    "code": "Other",
+    "name": "其他"
+  }
+]

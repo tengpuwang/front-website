@@ -1,0 +1,77 @@
+[
+  {
+    "id": "",
+    "name": "酒楼餐饮",
+    "class": "jl"
+  },
+  {
+    "id": "",
+    "name": "美容美发",
+    "class": "mr"
+  },
+  {
+    "id": "",
+    "name": "服饰鞋包",
+    "class": "fs"
+  },
+  {
+    "id": "",
+    "name": "休闲娱乐",
+    "class": "xx"
+  },
+  {
+    "id": "",
+    "name": "百货超市",
+    "class": "bh"
+  },
+  {
+    "id": "",
+    "name": "生活服务",
+    "class": "sh"
+  },
+  {
+    "id": "",
+    "name": "电子通讯",
+    "class": "dz"
+  },
+  {
+    "id": "",
+    "name": "汽修美容",
+    "class": "qx"
+  },
+  {
+    "id": "",
+    "name": "家具建材",
+    "class": "jj"
+  },
+  {
+    "id": "",
+    "name": "医药保健",
+    "class": "yy"
+  },
+  {
+    "id": "",
+    "name": "教育培训",
+    "class": "jy"
+  },
+  {
+    "id": "",
+    "name": "旅馆宾馆",
+    "class": "lg"
+  },
+  {
+    "id": "",
+    "name": "空铺转让",
+    "class": "kp"
+  },
+  {
+    "id": "",
+    "name": "专柜转让",
+    "class": "zg"
+  },
+  {
+    "id": "",
+    "name": "其他转让",
+    "class": "qt"
+  }
+]

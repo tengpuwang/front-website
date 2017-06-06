@@ -1,0 +1,572 @@
+{% extends '_layout/layout.html' %}
+
+<!-- main-content block-->
+{% block main-content %}
+
+<!-- Nav tabs -->
+<div class="list-tab container-fluid" id="StoreTab">
+    <ul class="nav container" role="tablist">
+        <li role="presentation" class="active"><a href="#attorn">商铺转让</a></li>
+        <!--<li role="presentation"><a href="/info/sell/search">商铺租售</a></li>-->
+        <!--<li role="presentation"><a href="/info/seek/search">求租求购</a></li>-->
+    </ul>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content container">
+    <div role="tabpanel" class="tab-pane active" id="attorn">
+        <div class="list-type">
+            <dl class="dl-horizontal">
+                <dt>区域：</dt>
+                <dd>
+                    <div class="sel-tab" id="area">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#areaAll" role="tab" data-toggle="tab"
+                                                                      id="without_district">区域不限</a></li>
+                            <li role="presentation"><a href="#ward" role="tab" data-toggle="tab"
+                                                       id="with_districts">行政区</a></li>
+                            <li role="presentation"><a href="#line" role="tab" data-toggle="tab"
+                                                       id="with_realways">地铁线</a></li>
+                            <!--<li role="presentation"><a href="#business" role="tab" data-toggle="tab">商圈</a></li>-->
+                        </ul>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane" id="areaAll"></div>
+                        <div role="tabpanel" class="tab-pane" id="ward">
+                            <!-- 行政区 -->
+                            {% set areas = site_data.city.areas %}
+                            {% for area in areas%}
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="{{ area.name }}" value="{{ area.name }}"> {{ area.name }}
+                                <small>({{ area.shopAreas.length }})</small>
+                            </label>
+                            {% endfor %}
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="line">
+                            {% set subways = site_data.city.subways %}
+                            {% for subway in subways %}
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="{{ subway.name }}" value="{{ subway.name }}"> {{ subway.name
+                                }}
+                                <small>({{ subway.stations.length }})</small>
+                            </label>
+                            {% endfor %}
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="business">...</div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>行业：</dt>
+                <dd>
+                    <a href="javascript: without_category();">行业不限</a>
+                    <div class="con" id="categogy">
+                        {% for ind in industries %}
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="{{ ind.name }}" value="{{ ind.name }}"> {{ ind.name }}
+                            <!--<small>({{ ind.count }})</small>-->
+                        </label>
+                        {% endfor %}
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>类型：</dt>
+                <dd>
+                    <a href="javascript:without_types();">类型不限</a>
+                    <div class="con" id="estate_type">
+                        {% for typ in store_types %}
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="{{ typ}}" value="{{ typ }}"> {{ typ }}
+                            <!--<small>({{ typ.count }})</small>-->
+                        </label>
+                        {% endfor %}
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="list-seleced">
+            <div class="con">
+                <!--如果没有筛选条件，以下内容直接移除，不要设置为 display:none><-->
+                <small>您已选择</small>
+                <span id="has_chossen"></span>
+                <!--如果没有筛选条件，以上内容直接移除 end><-->
+                <div class="other">
+                    <label for="empty" class="checkbox-inline"><input type="checkbox" id="empty"
+                                                                      value="empty"/>空转</label>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">租金费由低到高
+                            <span class="fa fa-long-arrow-up"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#">默认最新发布的</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">租金费由高到低 <span class="fa fa-long-arrow-down"></span></a></li>
+                            <li><a href="#">转让费由低到高 <span class="fa fa-long-arrow-up"></span></a></li>
+                            <li><a href="#">转让费由高到低 <span class="fa fa-long-arrow-down"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">总面积由小到大 <span class="fa fa-long-arrow-up"></span></a></li>
+                            <li><a href="#">总面积由大到小 <span class="fa fa-long-arrow-down"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="choose row">
+                <div class="col-lg-3 col-md-3 col-sm-3 exp">
+                    <input id="estate-transferFee-max" onchange="transferChange(this.value)" type="text"
+                           class="form-control input-sm" placeholder="转让费"/>万元以内
+                    <label for="my" class="checkbox-inline"><input type="checkbox" id="my" value="my"/> 可面议</label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 rent">
+                    <strong>租金</strong>
+                    <input id="estate-rental-min" onchange="rentalMinChange(this.value)" type="text"
+                           class="form-control input-sm" placeholder="0" value="0"/>至<input id="estate-rental-max"
+                                                                                            onchange="rentalMaxChange(this.value)"
+                                                                                            type="text"
+                                                                                            class="form-control input-sm"
+                                                                                            placeholder="0"/>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">元/月 <span
+                                class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">元/m<sup>2</sup>/天</a></li>
+                        </ul>
+                    </div>
+                    <label for="myrent" class="checkbox-inline"><input type="checkbox" id="myrent" value="myrent"/> 可面议</label>
+                    <a href="javascript:;">重置</a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 size">
+                    <strong>面积</strong>
+                    <input id="estate-area-min" onchange="areaMinChange(this.value)" type="text"
+                           class="form-control input-sm" placeholder="0" value="0"/>至<input id="estate-area-max"
+                                                                                            onchange="areaMaxChange(this.value)"
+                                                                                            type="text"
+                                                                                            class="form-control input-sm"
+                                                                                            placeholder="0"/>m<sup>2</sup>
+                    <a href="javascript:;">重置</a>
+                </div>
+            </div>
+        </div>
+        <div class="list-con">
+            {% set page_list = result_collection.pageDatas %}
+            {% for rel in page_list %}
+            <div class="item row">
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-7 base">
+                    <div class="media">
+                        <div class="media-left tengpu-link search-img" data-url="/info/{{ rel.id }}/details">
+                            <div>
+                                <div class="point">优选</div>
+                                <img src="{{ rel.images[0]|watermark }}">
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading tengpu-link" data-url="/info/{{ rel.id }}/details"><span>[ {{rel.infoType|infoType}} ]</span><strong>{{
+                                rel.title }}</strong></h4>
+                            <div class="info">
+                                {% if rel.infoSource === 'TENGPU' %}
+                                <span class="att ok"><i class="fa fa-check"></i>腾铺认证信息</span>
+                                {% endif %}
+                                <span class="time"><i class="fa fa-clock-o"></i>{{ now }}</span>
+                            </div>
+                            <div class="pos">
+                                <p>{{ rel.estate.location }}</p>
+                                <p><span>{{ rel.estate.type }}</span><span>{{ rel.category }}</span></p>
+                            </div>
+                            <div class="do">
+                                {% if rel.preference %}
+                                <a href="#"><i class="fa fa-heart"></i>收藏</a>
+                                {% else %}
+                                <a href="#"><i class="fa fa-heart-o"></i>收藏</a>
+                                {% endif %}
+                                <a href="#"><i class="fa fa-exchange"></i>加入对比</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-3 rent">
+                    <p>
+                        <small>转让费用</small>
+                        <strong>{{ rel.estate.transferFee/10000 }}</strong><span>万元</span>
+                    </p>
+                    <p>
+                        <small>租金费用</small>
+                        <strong>{{ rel.estate.rental }}</strong><span>元/月</span>
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 size">
+                    <small class="hidden">总面积</small>
+                    <strong>{{ rel.estate.area }}</strong>
+                    <span>m<sup>2</sup></span>
+                    {% if rel.estate.canEmptyAttorn %}
+                    <span class="btn btn-default">空转</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
+            {% set page_info = result_collection.pageInfo %}
+            {% if page_info.totalPage > 1 %}
+            <nav>
+                <ul class="pagination pagination-lg">
+                    {% if page_info.pageNo === 1 %}
+                    <li class="disabled"><a href="javascript:;">«</a></li>
+                    {% else %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo - 1}}'>«</a></li>
+                    {% endif %}
+                    {% if page_info.pageNo > 5 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo - 5}}'>{{ page_info.pageNo - 5 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.pageNo > 4 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo - 4}}'>{{ page_info.pageNo - 4 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.pageNo > 3 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo - 3}}'>{{ page_info.pageNo - 3 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.pageNo > 2 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo - 2}}'>{{ page_info.pageNo - 2 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.pageNo > 1 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo - 1}}'>{{ page_info.pageNo - 1 }}</a>
+                    </li>
+                    {% endif %}
+                    <li class="active"><a href="javascript:;">{{ page_info.pageNo }} <span
+                            class="sr-only">(current)</span></a></li>
+                    {% if page_info.totalPage - page_info.pageNo > 0 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo + 1}}'>{{ page_info.pageNo + 1 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.totalPage - page_info.pageNo > 1 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo + 2}}'>{{ page_info.pageNo + 2 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.totalPage - page_info.pageNo > 2 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo + 3}}'>{{ page_info.pageNo + 3 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.totalPage - page_info.pageNo > 3 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo + 4}}'>{{ page_info.pageNo + 4 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.totalPage - page_info.pageNo > 4 %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo + 5}}'>{{ page_info.pageNo + 5 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if page_info.pageNo === page_info.totalPage %}
+                    <li class="disabled"><a href="javascript:;">»</a></li>
+                    {% else %}
+                    <li><a href='?q={{ q|raw|json }}&pageNo={{ page_info.pageNo + 1}}'>»</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+    <a href="ratio.htm" class="btn btn-match ratio" target="_blank"><i>3</i>对比</a>
+</div>
+
+{% if q %}
+{% autoescape %}
+{{ q|script('_query') }}
+{% endautoescape %}
+<script>
+    $(function () {
+        initQuery();
+        // 绑定 类型 checkbox click event
+        $('#estate_type label input[type=checkbox]').on('click', function () {
+            var _checked = $(this).is(':checked');
+            var _types = _query.query['estate.type'] && _query.query['estate.type']['$in'];
+            var _val = $(this).val();
+            if (!_types) {
+                _query.query['estate.type'] = {
+                    '$in': []
+                };
+                _types = _query.query['estate.type']['$in'];
+            }
+            var _index = _types.indexOf(_val);
+            if (_checked) {
+                if (_index === -1) _types.push(_val);
+            } else {
+                if (_index > -1) _types.splice(_index, 1);
+            }
+            console.log('query中类型里的内容：', _query.query['estate.type']['$in']);
+            if (_types.length === 0) delete _query.query['estate.type'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+        });
+        // 绑定 行业 checkbox click event
+        $('#categogy label input[type=checkbox]').on('click', function () {
+            var _checked = $(this).is(':checked');
+            var _categories = _query.query['category'] && _query.query['category']['$in'];
+            var _val = $(this).val();
+            if (!_categories) {
+                _query.query['category'] = {
+                    '$in': []
+                };
+                _categories = _query.query['category']['$in'];
+            }
+            var _index = _categories.indexOf(_val);
+            if (_checked) {
+                if (_index === -1) _categories.push(_val);
+            } else {
+                if (_index > -1) _categories.splice(_index, 1);
+            }
+            console.log('query中行业里的内容：', _query.query['category']['$in']);
+            if (_categories.length === 0) delete _query.query['category'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+        });
+        // 绑定 不限区域 click事件
+        $('#without_district').on('click', function () {
+            var _district = _query.query && _query.query['estate.district'];
+            if (_district) {
+                delete _query.query['estate.district'];
+                delete _query.query['estate.subway'];
+                resetPageInfo();
+                window.location.href = '?q=' + JSON.stringify(_query);
+            }
+        });
+        // 绑定地铁线checkbox click event
+        $('#line label input[type=checkbox]').on('click', function () {
+            var _checked = $(this).is(':checked');
+            var _subways = _query.query['estate.subway'] && _query.query['estate.subway']['$in'];
+            var _val = $(this).val();
+            if (!_subways) {
+                _query.query['estate.subway'] = {
+                    '$in': []
+                };
+                _subways = _query.query['estate.subway'] && _query.query['estate.subway']['$in'];
+            }
+            var _index = _subways.indexOf(_val);
+            if (_checked) {
+                if (_index === -1) _subways.push(_val);
+            } else {
+                if (_index > -1) _subways.splice(_index, 1);
+            }
+            console.log('query中地铁里的内容：', _query.query['estate.subway']['$in']);
+            if (_subways.length === 0) delete _query.query['estate.subway'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+        });
+        // 绑定行政区checkbox click event
+        $('#ward label input[type=checkbox]').on('click', function () {
+            var _checked = $(this).is(':checked');
+            var _districts = _query.query['estate.district'] && _query.query['estate.district']['$in'];
+            var _value = $(this).val();
+            if (!_districts) {
+                _query.query['estate.district'] = {
+                    '$in': []
+                };
+                _districts = _query.query['estate.district'] && _query.query['estate.district']['$in'];
+            }
+            var _index = _districts.indexOf(_value);
+            if (_checked) {
+                if (_index === -1) _districts.push(_value);
+            } else {
+                if (_index > -1) _districts.splice(_index, 1);
+            }
+            console.log('query中地区里的内容：', _query.query['estate.district']['$in']);
+            if (_districts.length === 0) delete _query.query['estate.district'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+        });
+    });
+    // 类型 不限类型
+    function without_types() {
+        var _type = _query.query['estate.type'];
+        if (_type) {
+            delete _query.query['estate.type'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+        }
+    }
+    // 行业 不限类型
+    function without_category() {
+        var _category = _query.query['category'];
+        if (_category) {
+            delete _query.query['category'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+        }
+    }
+    /* 变更面积最小 */
+    function areaMinChange(_val) {
+        var _min = parseInt(_val + '');
+        var _max = parseInt($('#estate-area-max').val() + '');
+        if (isNaN(_min) || isNaN(_max) || _min < 0 || _max < 1 || _min >= _max) return;
+        var _area = _query.query && _query.query['estate.area'];
+        if (!_area) {
+            _query.query['estate.area'] = {
+                "$gt": _min,
+                "$lte": _max
+            }
+        } else {
+            _query.query['estate.area']['$gt'] = _min;
+            _query.query['estate.area']['$lte'] = _max;
+        }
+        resetPageInfo();
+        window.location.href = '?q=' + JSON.stringify(_query);
+    }
+    /* 变更面积最大 */
+    function areaMaxChange(_val) {
+        var _min = parseInt($('#estate-area-min').val() + '');
+        var _max = parseInt(_val + '');
+        var _area = _query.query && _query.query['estate.area'];
+        if (!_val) {
+            if (_area) delete _query.query['estate.area'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+            return;
+        }
+        if (isNaN(_min) || isNaN(_max) || _min < 0 || _max < 1 || _min >= _max) return;
+        if (!_area) {
+            _query.query['estate.area'] = {
+                "$gt": _min,
+                "$lte": _max
+            }
+        } else {
+            _query.query['estate.area']['$gt'] = _min;
+            _query.query['estate.area']['$lte'] = _max;
+        }
+        resetPageInfo();
+        window.location.href = '?q=' + JSON.stringify(_query);
+    }
+    /* 变更租金最小 */
+    function rentalMinChange(_val) {
+        var _min = parseInt(_val + '');
+        var _max = parseInt($('#estate-rental-max').val() + '');
+        if (isNaN(_min) || isNaN(_max) || _min < 0 || _max < 1 || _min >= _max) return;
+        var _area = _query.query && _query.query['estate.rental'];
+        if (!_area) {
+            _query.query['estate.rental'] = {
+                "$gt": _min,
+                "$lte": _max
+            }
+        } else {
+            _query.query['estate.rental']['$gt'] = _min;
+            _query.query['estate.rental']['$lte'] = _max;
+        }
+        resetPageInfo();
+        window.location.href = '?q=' + JSON.stringify(_query);
+    }
+    /* 变更租金最大 */
+    function rentalMaxChange(_val) {
+        var _min = parseInt($('#estate-rental-min').val() + '');
+        var _max = parseInt(_val + '');
+        var _area = _query.query && _query.query['estate.rental'];
+        if (!_val) {
+            if (_query.query['estate.rental']) delete _query.query['estate.rental'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+            return;
+        }
+        if (isNaN(_min) || isNaN(_max) || _min < 0 || _max < 1 || _min >= _max) return;
+        if (!_area) {
+            _query.query['estate.rental'] = {
+                "$gt": _min,
+                "$lte": _max
+            }
+        } else {
+            _query.query['estate.rental']['$gt'] = _min;
+            _query.query['estate.rental']['$lte'] = _max;
+        }
+        resetPageInfo();
+        window.location.href = '?q=' + JSON.stringify(_query);
+    }
+    /* 变更转让费用 */
+    function transferChange(_value) {
+        var _max = parseInt(_value + '');
+        var _transfer = _query.query && _query.query['estate.transferFee'];
+        if (!_value) {
+            if (_transfer) delete _query.query['estate.transferFee'];
+            resetPageInfo();
+            window.location.href = '?q=' + JSON.stringify(_query);
+            return;
+        }
+        if (isNaN(_max) || _max < 1) return;
+        if (!_transfer) {
+            _query.query['estate.transferFee'] = {
+                '$gt': 0,
+                '$lte': _max
+            }
+        } else {
+            _query.query['estate.transferFee']['$lte'] = _max;
+        }
+        resetPageInfo();
+        window.location.href = '?q=' + JSON.stringify(_query);
+    }
+    /* 还原分页信息 */
+    function resetPageInfo() {
+        var _pageInfo = _query.query && _query.page;
+        _pageInfo.index = 1;
+    }
+    /* 初始化_query参数 */
+    function initQuery() {
+        var _target = $('#has_chossen');
+        var _title = _query.query && _query.query.title;
+        var _districts = _query.query && _query.query['estate.district'] && _query.query['estate.district']['$in'] || [];
+        var _subways = _query.query['estate.subway'] && _query.query['estate.subway']['$in'] || [];
+        var _types = _query.query['estate.type'] && _query.query['estate.type']['$in'] || [];
+        var _categories = _query.query['category'] && _query.query['category']['$in'] || [];
+        var _area = _query.query && _query.query['estate.area'];
+        var _transfer = _query.query && _query.query['estate.transferFee'];
+        var _rental = _query.query && _query.query['estate.rental'];
+        if (_title) $('#bdcsMain').val(_title);
+        for (var i = 0; i < _districts.length; i++) {
+            var _val = _districts[i];
+            $('#' + _val).attr('checked', true);
+            var _str = '<a href="javascript:;" class="label label-theme" data-type="district" data-value="' + _val + '">' + _val + '<span>╳</span></a>';
+            _target.append(_str);
+        }
+        for (var i = 0; i < _subways.length; i++) {
+            var _val = _subways[i];
+            $('#' + _val).attr('checked', true);
+            var _str = '<a href="javascript:;" class="label label-theme" data-type="subway" data-value="' + _val + '">' + _val + '<span>╳</span></a>';
+            _target.append(_str);
+        }
+        for (var i = 0; i < _types.length; i++) {
+            var _val = _types[i];
+            $('#' + _val).attr('checked', true);
+            var _str = '<a href="javascript:;" class="label label-theme" data-type="type" data-value="' + _val + '">' + _val + '<span>╳</span></a>';
+            _target.append(_str);
+        }
+        for (var i = 0; i < _categories.length; i++) {
+            var _val = _categories[i];
+            $('#' + _val).attr('checked', true);
+            var _str = '<a href="javascript:;" class="label label-theme" data-type="category" data-value="' + _val + '">' + _val + '<span>╳</span></a>';
+            _target.append(_str);
+        }
+        if (_districts.length) {
+            $('#with_districts').click();
+        } else if (!_districts.length && _subways.length) {
+            $('#with_realways').click();
+        }
+        if (_area) {
+            var _min = _area['$gt'];
+            var _max = _area['$lte'];
+            if (_min) $('#estate-area-min').val(_min);
+            if (_max) $('#estate-area-max').val(_max);
+        }
+        if (_transfer) {
+            var _max = _transfer['$lte'];
+            if (_max) $('#estate-transferFee-max').val(_max);
+        }
+        if (_rental) {
+            var _min = _rental['$gt'];
+            var _max = _rental['$lte'];
+            if (_min) $('#estate-rental-min').val(_min);
+            if (_max) $('#estate-rental-max').val(_max)
+        }
+
+        $('#has_chossen').find('a').on('click', function () {
+            let _val = $(this).attr('data-value');
+            $('#' + _val).click();
+        });
+    }
+</script>
+{% endif%}
+
+{% endblock %}

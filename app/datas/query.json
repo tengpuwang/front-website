@@ -1,0 +1,31 @@
+{
+  "query": {
+    "isDeleted": {
+      "$ne": true
+    },
+    "infoType": "Attorn",
+    "estateType": "Store",
+    "infoSource": "TENGPU",
+    "estate.area": {
+      "$gt": 0,
+      "$lte": 52
+    },
+    "estate.transferFee": {
+      "$gt": 0,
+      "$lte": 10000
+    },
+    "estate.canBargaining": true,
+    "estate.canEmptyAttorn": false,
+    "estate.rental": {
+      "$gt": 0,
+      "$lte": 2000
+    }
+  },
+  "sort": {
+    "estate.area": -1
+  },
+  "page": {
+    "index": 1,
+    "size": "10"
+  }
+}

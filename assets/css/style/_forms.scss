@@ -1,0 +1,9 @@
+
+.form-control {
+  @include border-radius($input-border-radius);
+  // Customize the `:focus` state to imitate native WebKit styles.
+  @include form-control-focus;
+
+  // [converter] extracted textarea& to textarea.form-control
+}
+textarea.form-control {@include border-radius($border-radius-base);}
